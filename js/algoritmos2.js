@@ -3,3 +3,6 @@ const randomNumbers = (max, min) => {
     return random;
 };   
 
+const p2e2= "no lemon, no melon";
+const reverseString = String => String.split("").reverse().join("");
+console.log(reverseString(p2e2)); 
