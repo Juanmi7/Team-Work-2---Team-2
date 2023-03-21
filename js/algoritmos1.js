@@ -1,7 +1,7 @@
 const randomNumbers = (max, min) => {
-    let random = Math.floor(Math.random() * (max - min + 1) + min);
-    return random;
-};   
+  let random = Math.floor(Math.random() * (max - min + 1) + min);
+  return random;
+};
 
 const a1e2 = () => {
   notas = prompt("Choose a month").toLowerCase();
@@ -46,7 +46,6 @@ const a1e7 = () => {
       cambiolibra = euros * libraEsterlina;
       cambiofranco = francoSuico * euros;
       break;
-
     default:
       console.log("Introduzca un valor numerico valido");
       break;
