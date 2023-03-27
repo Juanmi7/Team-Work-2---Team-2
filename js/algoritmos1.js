@@ -33,7 +33,7 @@ const a1e2 = () => {
 console.log();
 
 const a1e7 = () => {
-  let euros = prompt("Dime tu cantidad en Euros");
+  let euros = prompt("Introduzca la cantidad en Euros");
   let dolarAmericano = 1.07;
   let yenJapones = 140.86;
   let libraEsterlina = 0.88;
