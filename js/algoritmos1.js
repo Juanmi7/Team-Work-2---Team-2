@@ -26,7 +26,7 @@ const a1e2 = () => {
       console.log("This month has 28 days");
       break;
     default:
-      console.log("That´s not a real month");
+      console.log("Thats not a real month");
       break;
   }
 };

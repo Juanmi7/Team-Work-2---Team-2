@@ -2,25 +2,31 @@ const randomNumbers = (max, min) => {
   let random = Math.floor(Math.random() * (max - min + 1) + min);
   return random;
 };
+const e3p2 = () => {
+  // Array para almacenar los códigos generados
+  let codigosGenerados = [];
 
-// Array para almacenar los códigos generados
-let codigosGenerados = [];
+  // Bucle while para generar los 10 códigos
+  while (codigosGenerados.length < 10) {
+    // Generar un código hexadecimal aleatorio
+    let codigoAleatorio =
+      "#" + Math.floor(Math.random() * 16777215).toString(16);
 
-// Bucle while para generar los 10 códigos
-while (codigosGenerados.length < 10) {
-  // Generar un código hexadecimal aleatorio
-  let codigoAleatorio = "#" + Math.floor(Math.random() * 16777215).toString(16);
-
-  // Comprobar si el código generado ya existe en el array
-  if (!codigosGenerados.includes(codigoAleatorio)) {
-    // Si no existe, agregarlo al array
-    codigosGenerados.push(codigoAleatorio);
+    // Comprobar si el código generado ya existe en el array
+    if (!codigosGenerados.includes(codigoAleatorio)) {
+      // Si no existe, agregarlo al array
+      codigosGenerados.push(codigoAleatorio);
+    }
   }
-}
-codigosGenerados.forEach(codigo => {
+  codigosGenerados.forEach((codigo) => {
     console.log("%cHello World!", `color: ${codigo}`);
   });
-  
+};
+
+//console.log(e3p2());
+
+
+function e3p7(){
   const citas = [
     "La mente que se abre a una nueva idea jamás volverá a su tamaño original",
     "Mentalidad Mamba, Ser la mejor version de ti mismo ",
@@ -39,7 +45,7 @@ codigosGenerados.forEach(codigo => {
     "La fuerza no proviene de la capacidad física. Viene de una voluntad indomable",
     "La imaginación es más importante que el conocimiento",
     "La verdadera prueba no es que evitas este fracaso, porque no puedes. Es si lo permites definirte o no",
-    "Soy un soñador. Creo que si no sueñas, estás vivo, pero no vives"
+    "Soy un soñador. Creo que si no sueñas, estás vivo, pero no vives",
   ];
   
   // Generar una cita aleatoria cada 10 segundos
@@ -58,3 +64,6 @@ codigosGenerados.forEach(codigo => {
     clearInterval(intervalo);
     console.log("Fin del programa");
   }, 120000);
+  
+}
+// console.log(e3p7());

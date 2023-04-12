@@ -5,9 +5,9 @@ const randomNumbers = (max, min) => {
 
 
 function e2p2(cad) {
-  var separarCadena = cad.split("");
-  var invertirArray = separarCadena.reverse();
-  var unirArrai = invertirArray.join("");
+  let separarCadena = cad.split("");
+  let invertirArray = separarCadena.reverse();
+  let unirArrai = invertirArray.join("");
   return unirArrai;
 }
 // Ejercicio 2 pdf 2 descomentar para ver
