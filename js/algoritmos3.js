@@ -3,6 +3,54 @@ const randomNumbers = (max, min) => {
   return random;
 };
 
+//EJERCICIO 1
+//Escribe un programa que pregunte al usuario los límites máximo y mínimo, y genere un array de 20 números aleatorios entre esos valores, 
+//ambos incluidos. Luego mostrará el valor más alto y el más bajo dentro del array, con el siguiente formato (por consola):
+//• min value: nnn
+//• max value: mmm
+
+const a3e1 = () => {
+  // function to add a leading 0 for positive and negative numbers
+  function pad(num, size) {
+    if (num < 0) {
+      // check if the number is negative
+      const withoutMinus = String(num).slice(1);
+      return "-" + withoutMinus.padStart(size, "0"); 
+    }
+    return String(num).padStart(size, "0");
+  }
+  // User input maximum and minimum value
+  let min, max;
+  while (true) {
+    min = prompt("Enter the minimum value:");
+    max = prompt("Enter the maximum value:");
+  
+    if (!isNaN(min) && !isNaN(max)) { 
+      min = parseInt(min);
+      max = parseInt(max);
+      break;
+    } else {
+      alert("Both values must be numbers. Please try again.");
+    }
+  }
+  
+  // Generate tweenty integer random numbers
+  const array = Array.from({ length: 20 }, () =>
+    Math.floor(Math.random() * (max - min + 1) + min)
+  );
+  // Include the given minimum and maximum values in the array
+  console.log(array);
+  // add leading zeros to the number
+  let resultMin = pad(Math.min(...array), 3);
+  let resultMax = pad(Math.max(...array), 3);
+
+  // Logged the result
+  console.log(`min value: ${resultMin}`);
+  console.log(`max value: ${resultMax}`);
+};
+
+// a3e1();
+
 //EJERCICIO 2
 // Escribe un programa que recoge la hora del sistema, y al cargar la página pregunta al usuario su nombre. A continuación, muestra un saludo personalizado (alerta) en función de la hora, teniendo en cuenta los siguientes rangos:
 // • Entre las 5:00 y las 11:59 → “Good Morning, {userName}!”
@@ -68,6 +116,26 @@ const a3e4Bonus = () => {
 };
 
 //a3e4Bonus();
+
+//EJERCICIO 7
+//Escribe un programa que genera 100 números aleatorios, entre 0 y 500, y los almacena en un array. A continuación filtra todos los números impares, ordenando los pares de mayor a menor.
+
+const a3e7 = () => {
+  let min = 0;
+  let max = 500;
+  // Generate tweenty integer random numbers
+  const array = Array.from({ length: 100 }, () =>
+    Math.floor(Math.random() * (max - min + 1) + min)
+  );
+  console.log(array);
+
+  // Filter even numbers and sort in descending order
+  let pair = array.filter((n) => n % 2 === 0);
+  let pairSorted = pair.sort((a, b) => b - a);
+  console.log(pairSorted);
+};
+
+// a3e7();
 
 //EJERCICIO 8
 // Escribe un programa para jugar a la carta más alta. Para el juego se utilizará la baraja de poker, por lo que:
@@ -225,4 +293,4 @@ const a3e9 = () => {
   cesar(false, false);
 };
 
-//a3e9()
+//a3e9();
